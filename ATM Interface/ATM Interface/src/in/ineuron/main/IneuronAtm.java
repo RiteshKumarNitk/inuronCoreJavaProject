@@ -100,6 +100,36 @@ public class IneuronAtm {
 					ATM.transactionHistory(user,bank);
 					menuDispAgain(user,sc,bank);
 					break;
+					case 2:
+					ATM.checkBalance(user,bank);
+					menuDispAgain(user,sc,bank);
+					break;
+				case 3:
+					ATM.withdrawAmount(user, sc,bank);
+					menuDispAgain(user,sc,bank);
+					break;
+				case 4:
+					ATM.depositeAmount(user, sc,bank);
+					menuDispAgain(user,sc,bank);
+					break;
+				case 5:
+					ATM.transferMoney(user, sc,bank);
+					ATM.checkBalance(user,bank);
+					int checkUser2=0;
+					System.out.println("Enter 8 User login Again");
+					checkUser2=sc.nextInt();
+					if(checkUser2==8) {
+						userLogin(sc,bank);
+					}else
+					{
+						menuDispAgain(user,sc,bank);
+					}
+					break;
+				case 6:
+					ATM.exitAtm();break;
+				default:
+					sc.nextLine();
+					break;
 			
 				}
 
